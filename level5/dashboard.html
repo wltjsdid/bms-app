@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="../../assets/js/jquery.mtz.monthpicker.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class="menu-icon"><img src="../../img/icon/me.png">접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html"class="menu-icon"><img src="../../img/icon/dash.png">대시보드</a>
+                    </li>
+                    <li>
+                        <a href="member_set.html" class="menu-icon"><img src="../../img/icon/ac.png">계정</a>
+                    </li>
+                    <li>
+                        <a href="depart_set.html" class="menu-icon"><img src="../../img/icon/div.png"> 부서</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+            <a class="navbar-brand" href=""><img src="../../img/logo.png"></a>
+            </div>
+                <div class="top-right">
+                    <div class="header-menu">
+                        <div class="header-left">
+                        <div class="user-area dropdown float-right">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <label class="user-name user-bg-ad">AD</label><span>관리자 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                            </a>
+                            <div class="user-menu dropdown-menu">
+                                <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                                <a class="nav-link" href="#">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <article class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <h1 class="main-title mb-5">관리자 기능</h1>
+                    </div>
+                </div>
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-5 col-xs-10 main-block">
+                                        <h5><a href="member_set.html">계정 &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a></h5>
+                                        <span>계정 부여 또는 관리</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-5 col-xs-10 main-block">
+                                        <h5><a href="Depart_set.html">부서 &nbsp;&nbsp;<i class="fas fa-angle-right"></i></a></h5>
+                                        <span>부서 추가 또는 관리</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 <!-- end -->
+            </article>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+    </div>
+
+
+
+<!-- Scripts -->   
+<script src="../../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+<!-- main-today -->
+<script>
+    const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+    const today = new Date();
+
+    const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일 ${daysOfWeek[today.getDay()]}요일`;
+
+    const resultElement = document.getElementById('today');
+    resultElement.textContent = formattedDate;
+</script>
+    
+
+</body>
+</html>

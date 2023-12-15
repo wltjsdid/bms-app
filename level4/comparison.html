@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="../../assets/js/jquery.mtz.monthpicker.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+    $(document).ready(function() {
+        $("#select-item2, #select-item3").hide();
+
+        $(".select-block").change(function() {
+            var selectedId = $(this).find("option:selected").attr("id");
+
+            switch (selectedId) {
+                case "select1":
+                    $("#select-item1").show();
+                    $("#select-item2, #select-item3").hide();
+                    break;
+                case "select2":
+                    $("#select-item2").show();
+                    $("#select-item1, #select-item3").hide();
+                    break;
+                case "select3":
+                    $("#select-item3").show();
+                    $("#select-item1, #select-item2").hide();
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+    </script>
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class="menu-icon"><img src="../../img/icon/me.png">접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html" class="menu-icon"><img src="../../img/icon/dash.png">대시보드</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../img/icon/cat-gro.png">그룹</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="dashboard_group.html">사업기획 그룹</a></li>
+                            <li><a href="dashboard_group.html">영업총괄 그룹</a></li>
+                            <li><a href="dashboard_group.html">컨텐츠 생산 그룹</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../img/icon/ac.png"> 본부</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="dashboard_part.html">경영지원 본부</a></li>
+                            <li><a href="dashboard_part.html">전략기획 본부</a></li>
+                            <li><a href="dashboard_part.html">이커머스 본부</a></li>
+                            <li><a href="dashboard_part.html">유통 본부</a></li>
+                            <li><a href="dashboard_part.html">개발 본부</a></li>
+                            <li><a href="dashboard_part.html">옥외광고 본부</a></li>
+                            <li><a href="dashboard_part.html">퍼포먼스 본부</a></li>
+                            <li><a href="dashboard_part.html">TM영업 본부</a></li>
+                            <li><a href="dashboard_part.html">브랜드기획 본부</a></li>
+                            <li><a href="dashboard_part.html">온라인마케팅 본부</a></li>
+                            <li><a href="dashboard_part.html">기업영업 본부</a></li>
+                            <li><a href="dashboard_part.html">협력마케팅 본부</a></li>
+                            <li><a href="G_dashboard_part.html">커뮤니티 본부</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="comparison.html" class="menu-icon"><img src="../../img/icon/dash.png">비교</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+        <a class="navbar-brand" href=""><img src="../../img/logo.png"></a>
+    </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="user-name user-bg-c">C</label><span>이사회 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                            <a class="nav-link" href="#">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <main>
+                <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="main-title mb-4">예산 비교 데이터</h1>
+                </div>
+                </div>
+                <article class="card">
+                    <div class="card-body">
+                        <div class="row border-bottom p-3">
+                            <div class="col-lg-12">
+                                <div class="w-50 mx-auto d-flex justify-content-center">
+                                <select class="form-select select-block" style="border-style: none;">
+                                    <option value="전체"  id="select1" checked>그룹전체</option>
+                                    <option value="손익" id="select2">영업총괄그룹</option>
+                                    <option value="예산" id="select3">사업총괄그룹</option>
+                                </select>
+                                <select class="form-select  select-block">
+                                    <option value="전체"  id="select1" checked>본부전체</option>
+                                    <option value="손익" id="select2">영업총괄그룹</option>
+                                    <option value="예산" id="select3">사업총괄그룹</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-bottom" id="select-item1">
+                            <div class="col-lg-6 border-end border-bottom p-3">
+                                <div class="d-flex justify-content-center w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 p-3 border-bottom " >
+                                <div class="d-flex justify-content-center  w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 border-end py-3 scroll-y">
+                                <canvas id="barchart1" class="barchart"></canvas>  
+                                <canvas id="barchart2" class="barchart"></canvas>
+                                <canvas id="barchart3" class="barchart"></canvas>  
+                            </div>
+                            <div class="col-lg-6 border-end py-3 scroll-y">
+                                <canvas id="barchart4" class="barchart" ></canvas>
+                                <canvas id="barchart5" class="barchart"></canvas>  
+                                <canvas id="barchart6" class="barchart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="row border-bottom" id="select-item2">
+                            <div class="col-lg-6 border-right p-3">
+                                <div class="d-flex justify-content-center w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 p-3" >
+                                <div class="d-flex justify-content-center w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 border-right p-3 scroll-y">
+                                <canvas id="barchart7" width="800" height="400"></canvas>  
+                            </div>
+                            <div class="col-lg-6 border-right p-3 scroll-y">
+                                <canvas id="barchart8" width="800" height="400"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="row border-bottom" id="select-item3">
+                            <div class="col-lg-6 border-right p-3">
+                                <div class="d-flex justify-content-center w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 border-right p-3">
+                                <div class="d-flex justify-content-center w-75 mx-auto">
+                                    <select class="form-select form-select-md">
+                                    <option value="전체" checked>전체</option>
+                                        <option value="손익">손익</option>
+                                        <option value="예산">예산</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="2023" checked>2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                    <select class="form-select form-select-md">
+                                        <option value="전체" checked>전체</option>
+                                        <option value="1월">1월</option>
+                                        <option value="2월">2월</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 border-right p-3 scroll-y">
+                                <canvas id="barchart9" width="800" height="300"></canvas>  
+                            </div>
+                            <div class="col-lg-6 border-right p-3 scroll-y">
+                                <canvas id="barchart10" width="800" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+
+    </div>
+
+
+
+<!-- Scripts -->  
+<script src="../../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var chartData1 = {
+    labels: ['수익합계', '지출합계'],
+    datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+    var chartData2 = {
+      labels: ['영업이익', '예산 편성액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#1BB955'],
+      }]
+    };
+    var chartData3 = {
+      labels: ['지출', '예산지출'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#FF3D3D', '#FF3D3D'],
+      }]
+    };
+    var chartData4 = {
+      labels: ['수익합계', '지출합계'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+    var chartData5 = {
+      labels: ['영업이익', '예산 편성액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#1BB955'],
+      }]
+    };
+
+    var chartData6 = {
+      labels: ['지출', '예산지출'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#FF3D3D', '#FF3D3D'],
+      }]
+    };
+    var chartData7 = {
+      labels: ['예산 편성액', '예산 지출액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+    var chartData8 = {
+      labels: ['예산 편성액', '예산 지출액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+    var chartData9 = {
+      labels: ['예산 편성액', '예산 지출액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+    var chartData10 = {
+      labels: ['예산 편성액', '예산 지출액'],
+      datasets: [{
+        label: false,
+        data: [3330000000, 5550000000],
+        barThickness: 100,
+        backgroundColor:['#1BB955', '#FF3D3D'],
+      }]
+    };
+
+    // 차트 생성
+    var chart1 = createChart('barchart1', chartData1);
+    var chart2 = createChart('barchart2', chartData2);
+    var chart3 = createChart('barchart3', chartData3);
+    var chart4 = createChart('barchart4', chartData4);
+    var chart5 = createChart('barchart5', chartData5);
+    var chart6 = createChart('barchart6', chartData6);
+    var chart7 = createChart('barchart7', chartData7);
+    var chart8 = createChart('barchart8', chartData8);
+    var chart9 = createChart('barchart9', chartData9);
+    var chart10 = createChart('barchart10', chartData10);
+
+
+    function createChart(canvasId, data) {
+      var ctx = document.getElementById(canvasId).getContext('2d');
+      return new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: {      
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              enabled: true
+            },
+            datalabels: {
+              color: '#000',
+              formatter: (value, context) => { },
+            anchor: 'end', // 데이터 라벨 위치 설정 (end: 막대 끝 부분에 표시)
+            align: 'top',  // 데이터 라벨 정렬 설정 (top: 막대 위에 표시)
+            }
+          },
+          scales: {
+            x: {
+            grid: {
+              display: false,
+            }
+          },
+
+          y: {
+            grid: {display: false,},
+            ticks: { display: false,},
+            beginAtZero: false,
+            max: 10000000000, //백억
+          },
+        }
+        },
+        plugins: [ChartDataLabels] // 플러그인 활성화
+      });
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

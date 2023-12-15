@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="../../assets/js/jquery.mtz.monthpicker.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class="menu-icon"><img src="../../img/icon/me.png">접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html"class="menu-icon"><img src="../../img/icon/dash.png">대시보드</a>
+                    </li>
+                    <li>
+                        <a href="member_set.html" class="menu-icon"><img src="../../img/icon/ac.png">계정</a>
+                    </li>
+                    <li>
+                        <a href="depart_set.html" class="menu-icon"><img src="../../img/icon/div.png"> 부서</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+            <a class="navbar-brand" href=""><img src="../../img/logo.png"></a>
+            </div>
+                <div class="top-right">
+                    <div class="header-menu">
+                        <div class="header-left">
+                        <div class="user-area dropdown float-right">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <label class="user-name user-bg-ad">AD</label><span>관리자 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                            </a>
+                            <div class="user-menu dropdown-menu">
+                                <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                                <a class="nav-link" href="#">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <article class="animated fadeIn">
+                <div class="row">
+                <div class="col-lg-12"><h1 class="main-title mb-4">부서 관리</h1></div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-2 col-xs-12">
+                                    <div class="cate_block">
+                                        <div id="cate-accordion" class="cate-accordion">
+                                            <div class="d_container">
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el one-set">그룹1</div>
+                                                    <div class="d_container">
+                                                        <div class="draggable" draggable="true">
+                                                        <div class="el two-set">본부1</div>
+                                                            <div class="d_container">
+                                                                <div class="draggable" draggable="true">
+                                                                    <div class="el Three-set">파트1</div>
+                                                                </div>
+                                                                <div class="draggable" draggable="true">
+                                                                    <div class="el Three-set">파트2</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d_container">
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el one-set">그룹2</div>
+                                                    <div class="d_container">
+                                                        <div class="draggable" draggable="true">
+                                                        <div class="el two-set">본부1</div>
+                                                            <div class="d_container">
+                                                                <div class="draggable" draggable="true">
+                                                                    <div class="el Three-set">파트1</div>
+                                                                </div>
+                                                                <div class="draggable" draggable="true">
+                                                                    <div class="el Three-set">파트2</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            
+
+                                    <div class="d-flex mt-3">
+                                        <button type="button" id="add_depart" class="btn btn-sm btn-outline-secondary btn-custom  mx-1">+ 추가</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary btn-custom  mx-1">-삭제</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-xs-12">
+                                    <div class="row form-group form-group-custom border-bottom pb-4 w-100 mx-auto">
+                                        <div class="col-md-2 d-flex align-items-center">부서명</div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="text-input" class="form-control form-custom Modify-input" placeholder="사업기획그룹">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center mt-5">
+                                    <button type="button" class="btn btn-outline-secondary btn-custom px-5">저장</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>      
+                </div>
+                 <!-- end -->
+            </article>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+    </div>
+
+
+
+
+
+
+<!-- Scripts -->   
+<script src="../../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+<!-- 아코디언 -->
+<script>
+  // $(document).ready(function() {
+  //   // 섹션 클릭 시 토글 동작
+  //   $('.acc-item > .one-set').click(function() {
+  //     $(this).next('.d_container').slideToggle();
+  //     $(this).toggleClass('active');
+  //   });
+
+  //   // 초기 드롭다운 닫힌 상태로 설정
+  //   $('.acc-item > .one-set').removeClass('active');
+  //   $('.acc-item > .d_container').hide();
+  // });
+
+    $(document).ready(function() {
+    // 초기 드롭다운 닫힌 상태로 설정
+    $('.draggable > .one-set, .draggable > .two-set').removeClass('active');
+    $('.draggable > .d_container').hide();
+
+    // 섹션 클릭 시 토글 동작
+    $('.draggable > .one-set, .draggable > .two-set').click(function() {
+        $(this).toggleClass('active');
+        $(this).siblings('.d_container').slideToggle();
+    });
+});
+
+
+</script>
+
+
+<!-- 드래그 드롭 -->
+<script>
+(() => {
+    const $ = (select) => document.querySelectorAll(select);
+    const containers = [...$('.d_container, .cate-accordion')];
+
+    function createDraggableElement(text) {
+        const draggable = document.createElement('div');
+        draggable.className = 'draggable';
+        draggable.draggable = true;
+        draggable.innerHTML = `<div class="el">${text}</div>`;
+        return draggable;
+    }
+
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    containers.forEach(container => {
+        container.addEventListener('dragover', e => {
+            e.preventDefault();
+            const afterElement = getDragAfterElement(container, e.clientY);
+            const draggable = document.querySelector('.dragging');
+            container.insertBefore(draggable, afterElement);
+        });
+    });
+
+    // document.getElementById('add_depart').addEventListener('click', function() {
+    //     const text = prompt('Enter the name for the new item:');
+    //     if (text) {
+    //         const newDraggable = createDraggableElement(text);
+    //         containers[0].appendChild(newDraggable); // Assuming you want to add to the first container
+    //     }
+    // });
+
+    document.getElementById('add_depart').addEventListener('click', function() {
+        const defaultText = '그룹';
+        const newDraggable = createDraggableElement(defaultText);
+        containers[0].appendChild(newDraggable); // Assuming you want to add to the first container
+    });
+
+
+    document.addEventListener('dragstart', e => {
+        const el = e.target.closest('.draggable');
+        if (el) {
+            el.classList.add('dragging');
+        }
+    });
+
+    document.addEventListener('dragend', () => {
+        const dragging = document.querySelector('.dragging');
+        if (dragging) {
+            dragging.classList.remove('dragging');
+        }
+    });
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var accItems = document.querySelectorAll('.acc-item');
+
+    accItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            this.classList.toggle('collapsed');
+        });
+    });
+});
+</script>
+
+
+
+</body>
+</html>

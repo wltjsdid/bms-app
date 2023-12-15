@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>멤버조회</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class=""><i class="menu-icon fa fa-bars"></i> 접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html"><i class="menu-icon fa-solid fa-house"></i>대시보드</a>
+                    </li>
+                    <li>
+                        <a href="member_set.html"><i class="menu-icon fa-solid fa-house"></i>계정</a>
+                    </li>
+                    <li>
+                        <a href="depart_set.html"><i class="menu-icon fa-solid fa-house"></i>부서</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+        <a class="navbar-brand" href=""><img src="../../images/logo.png"></a>
+    </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="user-name user-bg-ad">AD</label><span>관리자 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                            <a class="nav-link" href="#">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <article class="animated fadeIn">
+                <div class="row">
+                <div class="col-lg-12"><h1 class="main-title mb-4">부서 관리</h1></div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-3 col-xs-12">
+                                    <div class="cate_block">
+                                        <div id="cate-accordion">
+                                          <div class="acc-item">
+                                            <h3> 사업기획그룹</h3>
+                                            <div class="d_container">
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업1팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업2팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업3팀</div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="acc-item">
+                                            <h3> 그룹</h3>
+                                            <div class="d_container">
+                                                <div class="draggable" draggable="true"> 
+                                                    <div class="el hide">영업4팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업5팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업6팀</div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="acc-item">
+                                            <h3> 그룹</h3>
+                                            <div class="d_container">
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업7팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업8팀</div>
+                                                </div>
+                                                <div class="draggable" draggable="true">
+                                                    <div class="el">영업9팀</div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mt-3">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary btn-custom  mx-1">+ 추가</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary btn-custom  mx-1">-삭제</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-xs-12">
+                                    <div class="row form-group form-group-custom border-bottom pb-4">
+                                        <div class="col-md-2"><label for="text-input" class=" form-control-label">부서명</label></div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="text-input" class="form-control form-custom Modify-input" placeholder="사업기획그룹">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center mt-5">
+                                    <button type="button" class="btn btn-sm btn-outline-dark btn-custom px-5">저장</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>      
+                </div>
+                 <!-- end -->
+            </article>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+    </div>
+
+
+
+
+
+
+<!-- Scripts -->   
+<script src="../../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+<!-- 아코디언 -->
+<script>
+  $(document).ready(function() {
+    // 섹션 클릭 시 토글 동작
+    $('.acc-item > h3').click(function() {
+      $(this).next('.d_container').slideToggle();
+      $(this).toggleClass('active');
+    });
+
+    // 초기 드롭다운 닫힌 상태로 설정
+    $('.acc-item > h3').removeClass('active');
+    $('.acc-item > .d_container').hide();
+  });
+</script>
+
+
+<!-- 드래그 드롭 -->
+<script>
+(() => {
+    const $ = (select) => document.querySelectorAll(select);
+    const draggables = $('.draggable');
+    const containers = $('.d_container');
+
+    draggables.forEach(el => {
+        el.addEventListener('dragstart', () => {
+            el.classList.add('dragging');
+        });
+
+        el.addEventListener('dragend', () => {
+            el.classList.remove('dragging')
+        });
+    });
+
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
+      
+        return draggableElements.reduce((closest, child) => {
+          const box = child.getBoundingClientRect() //해당 엘리먼트에 top값, height값 담겨져 있는 메소드를 호출해 box변수에 할당
+          const offset = y - box.top - box.height / 2 //수직 좌표 - top값 - height값 / 2의 연산을 통해서 offset변수에 할당
+          if (offset < 0 && offset > closest.offset) { // (예외 처리) 0 이하 와, 음의 무한대 사이에 조건
+            return { offset: offset, element: child } // Element를 리턴
+          } else {
+            return closest
+          }
+        }, { offset: Number.NEGATIVE_INFINITY }).element
+    };
+
+    containers.forEach(container => {
+        container.addEventListener('dragover', e => {
+            e.preventDefault()
+            const afterElement = getDragAfterElement(container, e.clientY);
+            const draggable = document.querySelector('.dragging')
+            // container.appendChild(draggable)
+            container.insertBefore(draggable, afterElement)
+        })
+    });
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+  var accItems = document.querySelectorAll('.acc-item');
+
+  accItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      this.classList.toggle('collapsed');
+    });
+  });
+});
+
+</script>
+
+
+
+</body>
+</html>

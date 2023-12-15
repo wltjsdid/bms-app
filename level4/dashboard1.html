@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="../../assets/js/jquery.mtz.monthpicker.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+    <!-- Left Panel -->
+   <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class="menu-icon"><img src="../../img/icon/me.png">접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html" class="menu-icon"><img src="../../img/icon/dash.png">대시보드</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../img/icon/cat-gro.png">그룹</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="dashboard_group.html">사업기획 그룹</a></li>
+                            <li><a href="dashboard_group.html">영업총괄 그룹</a></li>
+                            <li><a href="dashboard_group.html">컨텐츠 생산 그룹</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle menu-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../img/icon/ac.png"> 본부</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><a href="dashboard_part.html">경영지원 본부</a></li>
+                            <li><a href="dashboard_part.html">전략기획 본부</a></li>
+                            <li><a href="dashboard_part.html">이커머스 본부</a></li>
+                            <li><a href="dashboard_part.html">유통 본부</a></li>
+                            <li><a href="dashboard_part.html">개발 본부</a></li>
+                            <li><a href="dashboard_part.html">옥외광고 본부</a></li>
+                            <li><a href="dashboard_part.html">퍼포먼스 본부</a></li>
+                            <li><a href="dashboard_part.html">TM영업 본부</a></li>
+                            <li><a href="dashboard_part.html">브랜드기획 본부</a></li>
+                            <li><a href="dashboard_part.html">온라인마케팅 본부</a></li>
+                            <li><a href="dashboard_part.html">기업영업 본부</a></li>
+                            <li><a href="dashboard_part.html">협력마케팅 본부</a></li>
+                            <li><a href="G_dashboard_part.html">커뮤니티 본부</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="comparison.html" class="menu-icon"><img src="../../img/icon/dash.png">비교</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+        <a class="navbar-brand" href=""><img src="../../img/logo.png"></a>
+    </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="user-name user-bg-c">C</label><span>이사회 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                            <a class="nav-link" href="#">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <main class="">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h1 class="main-title mb-5"><strong>대표/전무님, </strong>우리 회사 현황을 확인해 보세요!</h1>
+                    </div>
+                    <div class="col-lg-2">
+                        <!-- <button type="button" class="btn float-right"><h1 class="main-title mb-5"><strong>돌아가기</strong></h1></button> -->
+                    </div>
+                </div>
+                <article class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="card-body box-item">
+                                <h4 class="d-flex justify-content-between mb-4">회사 총 합산 현황</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p class="d-flex justify-content-between"><b>영업이익</b><strong><span class="color-green count">5000000</span>원</strong></p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p class="d-flex justify-content-between"><b >지출</b><strong><span class="color-red count">6025000</span>원</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="card-body box-item">
+                                <h4 class="d-flex justify-content-between mb-4">회사 총 예산 현황</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p class="d-flex justify-content-between"><b>월간 예산</b><strong><span class="color-green count">5000000</span>원</strong></p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p class="d-flex justify-content-between"><b >잔여 예산</b><strong><span class="color-red count">6025000</span>원</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="custom-tab">
+                            <div class="nav nav-tabs custom-nav-tabs">
+                                <a class="nav-item nav-link main-nav active" data-toggle="tab" href="#custom3-1-tab1" role="tab" aria-selected="true">그룹 별 월간 예산 사용 현황 &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                <a class="nav-item nav-link main-nav" data-toggle="tab" href="#custom3-1-tab2" role="tab" aria-selected="false">본부 별 월간 예산 사용 현황 &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="custom3-1-tab1">
+                                    <div class="py-3 px-4 list2_inner">
+                                        <div class="row border-top">
+                                            <div class="col-xl-6 d-flex justify-content-start py-3 border-bottom">
+                                                <a href="dashboard_group.html">사업기획그룹&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-start py-3 border-bottom">
+                                                <a href="dashboard_group.html">영업총괄그룹&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-start py-3 border-bottom">
+                                                <a href="dashboard_group.html">컨텐츠생산그룹&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="custom3-1-tab2" >
+                                    <div class="py-3 px-4 list2_inner">
+                                        <div class="row border-top">
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">경영지원본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">유통본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">퍼포먼스본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">개발본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">옥외광고본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">커뮤니티본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">옥외광고본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">커뮤니티본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">전략기획본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">협력마케팅본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">이커먼스본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">온라인마케팅영업본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">TM영업본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 d-flex justify-content-between py-3 border-bottom">
+                                                <a href="dashboard_part.html">기업영업본부&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                                                <div class="tab_link">
+                                                <label>편성</label>
+                                                <strong><span class="color-green count">5000000</span>원</strong>
+                                                </div>
+                                                <div class="tab_link">
+                                                <label>지출</label>
+                                                <strong><span class="color-red count">5000000</span>원</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="d-flex justify-content-between mb-4">월간 예산 사용 현황 <span class="chrat-item"><label><i class="fa-solid fa-circle color-green"></i> 편성</label> <label><i class="fa-solid fa-circle color-red"></i> 지출</label></span></h4>
+                                <canvas id="myChart" width="800" height="250"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </main>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+    </div>
+
+
+
+
+
+<!-- Scripts -->   
+<script src="../../assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+<!-- 차트 -->
+<!-- 차트 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+    labels: ['전략기획', '이커머스'],
+    datasets: [
+      {
+        label: '수익',
+        data: [30000, 50000], // Corrected data
+        barPercentage: 0.3,
+        categoryPercentage: 0.5,
+        borderWidth: 0,
+        borderColor: 'rgb(255, 255, 255,1)',
+        backgroundColor: 'rgba(27, 185, 85, 1)',
+        borderRadius: 10,
+      },
+    ],
+  },
+  options: {
+    tooltip: {
+      usePointStyle: true,
+    },
+    plugins: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: (ctx) => 'Tooltip point style: ' + ctx.chart.options.plugins.tooltip.usePointStyle,
+      },
+      tooltip: {
+        usePointStyle: true,
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        titleColor: '#333',
+        bodyColor: '#333',
+        bodySpacing: 5,
+        boxPadding: 5,
+        borderColor: '#ddd',
+        borderWidth: 1,
+        mode: 'index',
+        padding: 15,
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: false,
+        max: 100000,
+        min: 0,
+        ticks: { stepSize: 20000 },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  },
+});
+
+</script>
+
+<script type="text/javascript">
+  $('.count').each(function () {
+  var $this = $(this);
+  var countTo = $this.text().replace(/,/g, ''); // Remove existing commas
+  $({ Counter: 0 }).animate({
+    Counter: countTo
+  }, {
+    duration: 3000,
+    easing: 'swing',
+    step: function (now) {
+      $this.text(commaSeparateNumber(Math.ceil(now))); // Call commaSeparateNumber() to add commas
+    }
+  });
+});
+
+function commaSeparateNumber(number) {
+return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
+
+</body>
+</html>

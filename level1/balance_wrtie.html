@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>멤버조회</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <script src="../../assets/js/all.min.js"></script>
+
+
+    <!-- custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/cs-skin-elastic.css"> -->
+    <link rel="stylesheet" href="../../assets/css/default.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="../../assets/js/jquery.mtz.monthpicker.js"></script>
+
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- date table -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="../../assets/css/lib/datatable/dataTables.bootstrap4.css">
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a id="menuToggle" class="menu-icon"><img  src="../../img/icon/me.png"> 접기</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html" class="menu-icon"><img  src="../../img/icon/dash.png">대시보드</a>
+                    </li>
+                    <li>
+                        <a href="balance.html" class="menu-icon"><img  src="../../img/icon/balan.png">대차대조표</a>
+                    </li>
+                    <li>
+                        <a href="category.html" class="menu-icon"><img  src="../../img/icon/cat-gro.png">카테고리</a>
+                    </li>
+                    <!-- <li>
+                        <a href="statistics.html"><i class="menu-icon fa-solid fa-house"></i>통계</a>
+                    </li>
+                    <li>
+                        <a href="comparison.html"><i class="menu-icon fa-solid fa-house"></i>비교</a>
+                    </li> -->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+        <a class="navbar-brand" href=""><img src="../../img/logo.png"></a>
+    </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="user-name user-bg-sp">SP</label><span>솔루션기획파트 <i class="fas fa-chevron-down fa-xs pl-2"></i></span>
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <!-- <a class="nav-link" href="setting.html">설정변경</a> -->
+                            <a class="nav-link" href="#">로그아웃</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <section class="content">
+            <main>
+                <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="main-title mb-4">결산 등록</h1>
+                </div>
+                </div>
+                <article class="card">
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-xl-6 col-lg-12">
+                            <div class="row mb-4">
+                                <div class="col-lg-12">
+                                    <span class="d-flex justify-content-start align-item-center form-title">
+                                        <b>수익</b>&nbsp;
+                                        <!-- <input type="image" src="../../images/ic_calendar.svg" id="form-picker1-button" class="green-picker">&nbsp;&nbsp;
+                                        <input type="text" id="form-picker1" class="form-picker">  -->
+                                    </span>                                
+                                </div>
+                                <!-- <div class="col-lg-4">
+                                    <span class="d-flex justify-content-start align-item-center form-seach">
+                                        <i class="fas fa-search"></i>
+                                        <input class="form-control" type="text" placeholder="검색">
+                                    </span>
+                                </div> -->
+                            </div>
+                        <div class="text-nowrap">
+                            <table id="datetable1" class="Custom-table Custom-table-wrtie table green-table" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>날짜</th>
+                                            <th>대분류</th>
+                                            <th>중분류</th>
+                                            <th>소분류</th>
+                                            <th>금액</th>
+                                            <th>구분</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="color-green">8/<input type="text" maxlength='2'></td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>대분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력"> 
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                   <tr>
+                                        <td class="color-green">8/<input type="text" maxlength='2'></td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>대분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력"> 
+                                        </td>
+                                          <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="color-green">
+                                            <button type="button" class="custom-button-green" data-toggle="modal" data-target="#cancell"><span class="button-text">- 메모</span></button>
+                                           <span class="td-day"> 8/<input type="text" maxlength='2'></span>
+                                            <span class="fas fa-trash-alt" type="button" data-toggle="modal" data-target="#dell"></span>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option class="selected" selected>대분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력">     
+                                        </td>
+                                          <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">합계</td>
+                                        <td colspan="3" style="text-align: right;" class="form-count color-green"><span class="count_Sum float-right">296952185</span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>  
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="row mb-4">
+                            <div class="col-lg-12">
+                                <span class="d-flex justify-content-start align-item-center form-title">
+                                    <b>지출</b>&nbsp;
+                                    <!-- <input type="image" src="../../images/ic_calendar_red.svg" id="form-picker2-button" class="red-picker">&nbsp;&nbsp;
+                                    <input type="text" id="form-picker2" class="form-picker">  -->
+                                </span>                                
+                            </div>
+                            <!-- <div class="col-lg-4">
+                                <span class="d-flex justify-content-start align-item-center form-seach">
+                                    <i class="fas fa-search"></i>
+                                    <input class="form-control" type="text" placeholder="검색">
+                                </span>
+                            </div> -->
+                        </div>
+                        <div class="text-nowrap">
+                            <table id="datetable2" class="Custom-table table red-table Custom-table-wrtie" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>날짜</th>
+                                            <th>대분류</th>
+                                            <th>중분류</th>
+                                            <th>소분류</th>
+                                            <th>금액</th>
+                                            <th>구분</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                   <tr>
+                                        <td class="color-green">
+                                            <button type="button" class="custom-button-red" data-toggle="modal" data-target="#cancell"><span class="button-text">- 메모</span></button>
+                                           <span class="td-day"> 8/<input type="text" maxlength='2'></span>
+                                            <span class="fas fa-trash-alt" type="button" data-toggle="modal" data-target="#dell"></span>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected="selected">대분류 선택</option>
+                                                <option><a href=""></option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력"> 
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                   <tr>
+                                        <td class="color-green">
+                                            <button type="button" class="custom-button-gray" data-toggle="modal" data-target="#cancell"><span class="button-text">+ 메모</span></button>
+                                           <span class="td-day"> 8/<input type="text" maxlength='2'></span>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>대분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력">     
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="color-green">
+                                            <button type="button" class="custom-button-gray" data-toggle="modal" data-target="#cancell"><span class="button-text">+ 메모</span></button>
+                                           <span class="td-day"> 8/<input type="text" maxlength='2'></span>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>대분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>중분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>소분류 선택</option>
+                                                <option>센스맘</option>
+                                                <option>청명광고기획</option>
+                                                <option>일동제약</option>
+                                                <option>골든루체뷰</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-input numeric-input" placeholder="입력">    
+                                        </td>
+                                        <td>
+                                            <select class="form-select custom-select1">
+                                                <option selected>선택</option>
+                                                <option>카드</option>
+                                                <option>이체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3">합계</td>
+                                        <td colspan="3" class="form-count color-red"><span class="count_Sum float-right">296952185</span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>  
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="button" class="btn btn-outline-secondary mr-3 px-4">등록</button>
+                    <button type="button" class="btn btn-outline-secondary px-4">취소</button>
+                </div>
+                    </div>
+                </article>
+            </main>
+        </section>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+
+    </div>
+
+<!-- modal -->
+<div class="modal fade" id="cancell" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header pop-header">
+                <h5 class="modal-title color-green" id="myModalLabel">메모 등록</h5>
+            
+            </div>
+            <div class="modal-body text-center pop-body">
+                <!-- <textarea class="form-control" placeholder="반려 사유를 입력해 주세요.(50자 이내 입력)"></textarea> -->
+                <input type="text" class="form-modal form-control" placeholder="공백 제외 10자 입력 가능">
+            </div>
+            <div class="modal-footer pop-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-success px-4 mr-3" data-dismiss="modal">등록</button>
+                <button type="button" class="btn btn-outline-danger btn-cancel px-4" data-dismiss="modal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="dell" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-4">
+             <div class="modal-body text-center pop-body pt-2">
+                 <h5 class="modal-title text-center">삭제하시겠습니까?</h5>
+            </div>
+            <div class="pop-footer d-flex justify-content-center pt-2">
+                <button type="button" id="dell_btn" class="btn btn-outline-success px-4 mr-3" data-dismiss="modal">확인</button>
+                <button type="button" class="btn btn-outline-danger btn-cancel px-4" data-dismiss="modal">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Scripts -->  
+<script src="../../assets/js/main.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+
+<script>
+    function addCommas(input) {
+        return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function removeCommas(input) {
+        return input.replace(/,/g, '');
+    }
+
+    // 모든 numeric-input 클래스를 가진 요소에 이벤트를 바인딩합니다.
+    var numericInputs = document.querySelectorAll('.numeric-input');
+    numericInputs.forEach(function(input) {
+        input.addEventListener('input', function(event) {
+            var inputValue = removeCommas(event.target.value);
+            inputValue = inputValue.replace(/[^\d]/g, '');
+            var formattedValue = addCommas(inputValue);
+            event.target.value = formattedValue;
+        });
+    });
+</script>
+
+
+</body>
+</html>
